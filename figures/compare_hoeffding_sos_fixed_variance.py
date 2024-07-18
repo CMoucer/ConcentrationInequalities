@@ -32,15 +32,9 @@ for i in range(nb):
     linear_bounds[i] = mu_1 / (mu_1 + ts[i])
     extremal_points = compute_extremal_points(mu_1, ts[i], n)
     variational_bounds[i] = compute_variational_hoeffding(extremal_points, mu_1)
-if computed:
-    sos_bounds = np.genfromtxt(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/figures/data/hoeffding_n_{n}_d_{d}_mu1_{mu_1}_mu2_{mu_2}.txt',
-        delimiter=',')
-else:
-    for i in range(nb):
-        print(ts[i])
-        sos_bounds[i] = concentration_sos_hoeffding_with_variance(mu_1, mu_2, ts[i], d, n)
-    np.savetxt(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/figures/data/hoeffding_n_{n}_d_{d}_mu1_{mu_1}_mu2_{mu_2}.txt',
-        sos_bounds, delimiter=',')
+for i in range(nb):
+    print(ts[i])
+    sos_bounds[i] = concentration_sos_hoeffding_with_variance(mu_1, mu_2, ts[i], d, n)
 
 plt.plot(ts, hoeffding_bounds, color='black', label='hoeffding')
 plt.plot(ts, sos_bounds, color='red', label='SoS')
@@ -54,5 +48,4 @@ plt.ylabel(r'concentration bound $\rho$', fontsize=16)
 plt.legend(fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=14)
 
-plt.savefig(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/output/hoeffding/comparison_sos_mu1_{mu_1}_mu_2_{mu_2}_d_{d}_n_{n}.png', dpi=150)
 plt.show()

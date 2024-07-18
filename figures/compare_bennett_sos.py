@@ -23,20 +23,10 @@ ts = np.linspace(0.05, 1 - mu_1 - 0.05, nb)
 bennet_bounds = np.zeros(nb)
 sos_bounds = np.zeros(nb)
 
-computed = False
 
 for i in range(nb):
     bennet_bounds[i] = bennett_inequality(sigma, a, ts[i], n)
-if computed:
-    sos_bounds = np.genfromtxt(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/figures/data/bennet_n_{n}_d_{d}_mu1_{mu_1}_mu2_{mu_2}.txt',
-        delimiter=',')
-else:
-    for i in range(nb):
-        print(ts[i])
-        #sos_bounds[i] = concentration_sos_bennet(mu_1, mu_2, ts[i], d, n)
-        sos_bounds[i] = concentration_bennett_sos_complexified(mu_1, mu_2, ts[i], d, n)
-    np.savetxt(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/figures/data/bennet_n_{n}_d_{d}_mu1_{mu_1}_mu2_{mu_2}.txt',
-        sos_bounds, delimiter=',')
+    sos_bounds[i] = concentration_bennett_sos_complexified(mu_1, mu_2, ts[i], d, n)
 
 plt.plot(ts, bennet_bounds, color='green', label='Bennett')
 plt.plot(ts, sos_bounds, color='red', label='SoS')
@@ -48,5 +38,4 @@ plt.ylabel(r'concentration bound $\rho$', fontsize=16)
 plt.legend(fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=14)
 
-plt.savefig(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/output/bennet/comparison_sos_mu1_{mu_1}_mu_2_{mu_2}_d_{d}_n_{n}.pdf', dpi=150)
 plt.show()

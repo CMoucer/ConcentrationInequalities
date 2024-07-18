@@ -36,5 +36,4 @@ plt.ylabel(r'concentration bound $\rho$', fontsize=16)
 plt.legend(fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=14)
 
-plt.savefig(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/output/hoeffding/linear_iid_comparison_mu_{mu}.pdf', dpi=250)#, bbox_inches='tight')
 plt.show()

@@ -28,7 +28,7 @@ for i in range(nb):
     bound_variational[i] = compute_variational_hoeffding(extremal_points, mu)
 
 plt.plot(ts, bound_hoeffding, color='green', label="Hoeffding\'s inequality")
-plt.plot(ts, bound_exponential, color='blue', label='exponential')
+plt.plot(ts, bound_exponential, color='blue', label='separable')
 plt.plot(ts, bound_variational, color='red', label='variational')
 
 plt.rc('text', usetex=True)
@@ -38,5 +38,4 @@ plt.ylabel(r'concentration bound $\rho$', fontsize=16)
 plt.legend(fontsize=14)
 plt.tick_params(axis='both', which='major', labelsize=14)
 
-plt.savefig(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/output/hoeffding/iid_comparison_mu_{mu}_n_{n}.pdf', dpi=250)#, bbox_inches='tight')
 plt.show()

@@ -36,7 +36,7 @@ for i in range(nb):
     bound_exponential[i] = compute_hoeffding_exponential_means(mus, ts[i], n)
 
 plt.plot(ts, bound_hoeffding, color='green', label="Hoeffding\'s inequality")
-plt.plot(ts, bound_exponential, color='blue', label='exponential')
+plt.plot(ts, bound_exponential, color='blue', label='separable')
 plt.plot(ts, bound_variational, color='red', label='variational')
 
 plt.rc('text', usetex=True)
@@ -46,5 +46,4 @@ plt.ylabel(r'concentration bound $\rho$', fontsize=16)
 plt.legend(fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=14)
 
-plt.savefig(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/output/hoeffding/two_blocks_comparison_mu1_{mu1}_mu2_{mu2}_n_{n}_m_{ids}.pdf', dpi=250)#, bbox_inches='tight')
 plt.show()

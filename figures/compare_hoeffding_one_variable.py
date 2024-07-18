@@ -30,7 +30,7 @@ if plot_option == 't':
         bound_exact[i] = compute_hoeffding_exact_univariate(mu, ts[i])
 
     plt.plot(ts, bound_hoeffding, color='green', label="Hoeffding\'s inequality")
-    plt.plot(ts, bound_exponential, color='blue', label='exponential')
+    plt.plot(ts, bound_exponential, color='blue', label='separable')
     plt.plot(ts, bound_exact, color='red', label='exact')
 
     plt.rc('text', usetex=True)
@@ -40,7 +40,6 @@ if plot_option == 't':
     plt.legend(fontsize=14)
     plt.tick_params(axis='both', which='major', labelsize=14)
 
-    plt.savefig(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/output/hoeffding/univariate_comparison_mu_{mu}.pdf', dpi=250)#, bbox_inches='tight')
     plt.show()
 
 
@@ -72,5 +71,4 @@ elif plot_option == 'mu':
     plt.legend(fontsize=14)
     plt.tick_params(axis='both', which='major', labelsize=14)
 
-    plt.savefig(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/output/hoeffding/univariate_comparison_t_{t}.pdf', dpi=250)#, bbox_inches='tight')
     plt.show()
