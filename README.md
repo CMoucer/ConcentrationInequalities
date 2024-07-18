@@ -46,20 +46,23 @@ pip install mosek
 pip install sdpa-python
 ```
 
-## Compute concentration inequalities
+### Computing concentration inequalities
 Our code is divided into three main folders:
-- **compute_concentration**: classical Hoeffding's, Bennett's and Bernstein's inequalities, 
-as well as the separable approach (applied to the moment generating function) and the variational approach.
-- **compute_concentration_sos**: polynomial approaches for Hoeffding's, Bennett's and 
-Bernstein's inequalities.
+- **compute_concentration**: classical inequalities (Hoeffding, Bennett, Bernstein, Chebyshev), the separable approach 
+- (applied to the moment generating function) and the variational approach in the context of Hoeffding's inequality.
+- **compute_concentration_sos**: polynomial approaches for Hoeffding's, Bennett's and Bernstein's inequalities.
 - **figures**: each file reproduces a figure from the paper.
 
 Our code allows to compute in particular concentration inequalities in the separable and exponential approach given 
 finite first-order moments, and in the polynomial approach using semidefinite programming when the first and 
 second-order moments are finite.
+
 ## Authors
 * **Céline MOUCER** 
 * **Adrien TAYLOR**
 * **Francis BACH** 
 
 ## References
+
+* [Concentration inequalities](https://academic.oup.com/book/26549?login=true) - S. Boucheron, G. Lugosi, Gabor, P. Massart.
+* Constructive approaches to concentration inequalities with independent random variables, C.Moucer, A. Taylor, F. Bach.
