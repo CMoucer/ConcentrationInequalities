@@ -1,3 +1,8 @@
+######################################################################################################################
+# This file computes an upper bound to Hoeffding's inequality in the polynomial approach for i.i.d. random variables,
+# after optimizing over the second-order moment. It corresponds to Figure 7 of the paper.
+######################################################################################################################
+
 import numpy as np
 import matplotlib.pyplot as plt
 

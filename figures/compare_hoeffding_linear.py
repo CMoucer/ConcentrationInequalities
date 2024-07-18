@@ -1,3 +1,8 @@
+x######################################################################################################################
+# This file computes an upper bound to Hoeffding's inequality in the linear approach.
+# It corresponds to Figure 4 of the paper.
+######################################################################################################################
+
 import numpy as np
 import matplotlib.pyplot as plt
 

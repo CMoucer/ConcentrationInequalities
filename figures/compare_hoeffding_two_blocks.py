@@ -1,3 +1,8 @@
+######################################################################################################################
+# This file computes an upper bound to Hoeffding's inequality in the variational approach for two blocks of random
+# variables with different means. It corresponds to Figure 3 of the paper.
+######################################################################################################################
+
 import numpy as np
 import matplotlib.pyplot as plt
 

@@ -1,9 +1,14 @@
+######################################################################################################################
+# This file computes an upper bound to Hoeffding's inequality in the polynomial approach for i.i.d. random variables,
+# with a fixed second-order moment. It corresponds to Figure 7 of the paper.
+######################################################################################################################
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 from compute_concentration.compute_concentration_classical_bounds import compute_hoeffding_bound
-from compute_concentration_sos.compute_sos_hoeffding import concentration_sos_hoeffding_with_variance, concentration_sos_hoeffding_with_variance_simplified
-from compute_concentration.compute_concentration_hoeffding import compute_variational_hoeffding, compute_hoeffding_exponential
+from compute_concentration_sos.compute_sos_hoeffding import concentration_sos_hoeffding_with_variance
+from compute_concentration.compute_concentration_hoeffding import compute_variational_hoeffding
 from compute_concentration.compute_extremal_points_hoeffding import compute_extremal_points
 
 mu_1 = 0.3 # first-order moment

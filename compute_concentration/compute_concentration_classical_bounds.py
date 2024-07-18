@@ -31,7 +31,7 @@ def chebyshev_inequality(sigma, t):
 def function_h(t):
     return (1 + t) * np.log(1+t) - t
 
-def bennet_inequality(sigma, a, t, n=1):
+def bennett_inequality(sigma, a, t, n=1):
     """
     This function computes Bennet's inequality, for (X_1, ..., X_n) be random variable with finite the variance such that
     sigma^2 = sum_i (E[X_i - E[X_i]]^2) and taking their values in ]-infty, a].

@@ -1,12 +1,15 @@
+######################################################################################################################
+# This file computes an upper bound to Hoeffding's inequality in the variational approach for two blocks of random
+# variables with different means. It corresponds to Figure 1 of the paper.
+######################################################################################################################
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 from compute_concentration.compute_concentration_classical_bounds import compute_hoeffding_bound
 from compute_concentration.compute_concentration_hoeffding import compute_hoeffding_exact_univariate, compute_hoeffding_exponential
 
-# Plot the concentration bound in the exact and exponential approach and compare them to Hoeffding's inequality.
-# We assume X takes its values in [0, 1] a.s..
-
+# As a function of mu if "plot_option = 'mu'", and as function of t if "plot_option = 't'".
 plot_option = 'mu' # or 't'
 
 ## With the pl_option 't', we plot the bounds as functions of t

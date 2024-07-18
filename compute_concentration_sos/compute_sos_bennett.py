@@ -5,7 +5,7 @@ import sdpap
 from compute_concentration_sos.utils import monomial_vector, decomposition_SDP_to_monomials, kappas, new_kappas
 
 # Putinar representation
-def polytope_bennet(mu, t, matrix_kappas):
+def polytope_bennett(mu, t, matrix_kappas):
     dim_sdp = matrix_kappas.shape[0]
     n = matrix_kappas.shape[2] # number of variables
     G = np.zeros((n + 1, dim_sdp, dim_sdp))
@@ -20,7 +20,7 @@ def polytope_bennet(mu, t, matrix_kappas):
                     G[n][i][j] = - n * (mu + t)
     return G
 
-def concentration_sos_bennet(mu_1, mu_2, t, d_eff, n, verbose=False):
+def concentration_sos_bennett(mu_1, mu_2, t, d_eff, n, verbose=False):
     """
     Compute the concentration for Bennet's inequality, with a quadratic upper upper bound approximated
     by polynomials of degree d and their relaxed SDP .
@@ -46,7 +46,7 @@ def concentration_sos_bennet(mu_1, mu_2, t, d_eff, n, verbose=False):
     S = []
     X = []
     # Build the kappas representation for G
-    G = polytope_bennet(mu_1, t, matrix_kappas)
+    G = polytope_bennett(mu_1, t, matrix_kappas)
     G_kappas = np.zeros((G.shape[0], len(value_kappas)))
     for i in range(G_kappas.shape[0]):
         G_kappas[i] = decomposition_SDP_to_monomials(G[i], antecedent_kappas)
@@ -137,7 +137,7 @@ def concentration_sos_bennet(mu_1, mu_2, t, d_eff, n, verbose=False):
         return problem.value
 
 
-def concentration_bennet_sos_complexified(mu_1, mu_2, t, d, n, plot_Q=False):
+def concentration_bennett_sos_complexified(mu_1, mu_2, t, d, n, plot_Q=False):
     """
     :param mu_1: first-order moment (float)
     :param mu_2: second-order moment (float)
@@ -158,7 +158,7 @@ def concentration_bennet_sos_complexified(mu_1, mu_2, t, d, n, plot_Q=False):
     dim_sdp = matrix_kappas.shape[0]
 
     # Build the constraint set in the kappas representation
-    G = polytope_bennet(mu_1, t, matrix_kappas)
+    G = polytope_bennett(mu_1, t, matrix_kappas)
     G_kappas = np.zeros((G.shape[0], len(value_kappas)))
     for i in range(G_kappas.shape[0]):
         G_kappas[i] = decomposition_SDP_to_monomials(G[i], antecedent_kappas)

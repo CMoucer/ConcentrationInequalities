@@ -1,8 +1,14 @@
+######################################################################################################################
+# This file computes an upper bound to Bennett's inequality in the polynomial approach.
+# It corresponds to Figure 6 of the paper.
+######################################################################################################################
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 
-from compute_concentration_sos.compute_sos_bennet import concentration_sos_bennet, concentration_bennet_sos_complexified
-from compute_concentration.compute_concentration_classical_bounds import bennet_inequality
+from compute_concentration_sos.compute_sos_bennett import concentration_sos_bennett, concentration_bennett_sos_complexified
+from compute_concentration.compute_concentration_classical_bounds import bennett_inequality
 
 mu_1 = -0.3 # first-order moment
 mu_2 = 1 # second-order moment
@@ -20,7 +26,7 @@ sos_bounds = np.zeros(nb)
 computed = False
 
 for i in range(nb):
-    bennet_bounds[i] = bennet_inequality(sigma, a, ts[i], n)
+    bennet_bounds[i] = bennett_inequality(sigma, a, ts[i], n)
 if computed:
     sos_bounds = np.genfromtxt(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/figures/data/bennet_n_{n}_d_{d}_mu1_{mu_1}_mu2_{mu_2}.txt',
         delimiter=',')
@@ -28,7 +34,7 @@ else:
     for i in range(nb):
         print(ts[i])
         #sos_bounds[i] = concentration_sos_bennet(mu_1, mu_2, ts[i], d, n)
-        sos_bounds[i] = concentration_bennet_sos_complexified(mu_1, mu_2, ts[i], d, n)
+        sos_bounds[i] = concentration_bennett_sos_complexified(mu_1, mu_2, ts[i], d, n)
     np.savetxt(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/figures/data/bennet_n_{n}_d_{d}_mu1_{mu_1}_mu2_{mu_2}.txt',
         sos_bounds, delimiter=',')
 
@@ -42,5 +48,5 @@ plt.ylabel(r'concentration bound $\rho$', fontsize=16)
 plt.legend(fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=14)
 
-plt.savefig(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/output/bennet/comparison_sos_mu1_{mu_1}_mu_2_{mu_2}_d_{d}_n_{n}.png', dpi=150)
+plt.savefig(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/output/bennet/comparison_sos_mu1_{mu_1}_mu_2_{mu_2}_d_{d}_n_{n}.pdf', dpi=150)
 plt.show()

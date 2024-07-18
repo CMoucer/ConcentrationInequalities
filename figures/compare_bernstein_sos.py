@@ -1,3 +1,9 @@
+######################################################################################################################
+# This file computes an upper bound to Bernstein's inequality in the polynomial approach.
+# It corresponds to Figure 5 of the paper.
+######################################################################################################################
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -40,5 +46,5 @@ plt.ylabel(r'concentration bound $\rho$', fontsize=16)
 plt.legend(fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=14)
 
-plt.savefig(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/output/bernstein/comparison_sos_mu1_{mu_1}_mu_2_{mu_2}_d_{d}_n_{n}.png', dpi=150)
+plt.savefig(f'/Users/cmoucer/PycharmProjects/ConcentrationInequalities_ConvOpt/output/bernstein/comparison_sos_mu1_{mu_1}_mu_2_{mu_2}_d_{d}_n_{n}.pdf', dpi=150)
 plt.show()
