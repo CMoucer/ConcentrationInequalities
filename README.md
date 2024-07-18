@@ -1,21 +1,20 @@
 # Concentration inequalities
 
-This code allows to compute some concentration inequalities using convex optimization. We propose to compute 
-upper bounds in three approaches: a separable and variational approaches based on a family of product-functions,
-as well as a polynomial approach, relying on a sums-of-square hierarchy. These techniques are developed in
-details in the paper: 
+This repository contains the code accompanying our paper on concentration inequalities, a fundamental tool in probability 
+theory that quantifies the deviation of a random variable from a certain quantity. Our work introduces a systematic 
+convex optimization approach to studying and generating concentration inequalities for independent random variables.
+We apply this framework to three standard concentration inequalities: Hoeffding's, Bennett's and Bernstein's inequalities.
+
+This code allows in particular to draw figures from the paper:
 
 **Constructive approaches to
 concentration inequalities with independent
 random variables** (to come) - C. Moucer, A. Taylor, F. Bach. 
 
-Given this framework, we compute refined bounds to:
-- Hoeffding's inequality,
-- Bennett's inequality,
-- Bernstein's inequality.
+## Key contributions
 
-This code allows in particular to draw figures from the paper above.
-
+1. **Separable and variational approaches**: Extends classical moment-generating functions with a focus on first-order moment conditions.
+2. **Polynomial approaches**: Develops a hierarchy of sum-of-square approximations to extend techniques to higher-moment conditions
 
 ## Getting Started
 
@@ -46,12 +45,13 @@ pip install mosek
 pip install sdpa-python
 ```
 
-### Computing concentration inequalities
+### Contents
 Our code is divided into three main folders:
-- **compute_concentration**: classical inequalities (Hoeffding, Bennett, Bernstein, Chebyshev), the separable approach 
-- (applied to the moment generating function) and the variational approach in the context of Hoeffding's inequality.
-- **compute_concentration_sos**: polynomial approaches for Hoeffding's, Bennett's and Bernstein's inequalities.
-- **figures**: each file reproduces a figure from the paper.
+- **'compute_concentration/'**: code for classical inequalities (Hoeffding, Bennett, Bernstein, Chebyshev) and code for
+the separable and variational approaches in the context of Hoeffding's inequalities
+- **'compute_concentration_sos/'**: code for the polynomial approach using sum-of-square approximations, in the context of
+Hoeffding's, Bennett's and Bernstein's inequalities.
+- **'figures/'**: each file reproduces a figure from the paper.
 
 Our code allows to compute in particular concentration inequalities in the separable and exponential approach given 
 finite first-order moments, and in the polynomial approach using semidefinite programming when the first and 
