@@ -65,4 +65,4 @@ second-order moments are finite.
 ## References
 
 * [Concentration inequalities: A Nonasymptotic Theory of Independence](https://academic.oup.com/book/26549?login=true) - S. Boucheron, G. Lugosi, Gabor, P. Massart.
-* Constructive approaches to concentration inequalities with independent random variables, C.Moucer, A. Taylor, F. Bach.
+* [Constructive approaches to concentration inequalities with independent random variables](https://arxiv.org/abs/2408.16480), C.Moucer, A. Taylor, F. Bach.
